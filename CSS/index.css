@@ -1,0 +1,104 @@
+html {
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--background);
+}
+.header {
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    padding: 3rem 10rem;
+}
+.header--inside-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.operation-section-container {
+    background-color: var(--operation-section);
+}
+.u-heading-2 {
+    font-size: 3.2rem;
+}
+.u-heading-3 {
+    font-size: 2.2rem;
+}
+.dark-ligth-mode-button {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border: none;
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--background);
+}
+.search-and-filter-bar {
+    position: relative;
+    width: 90%;
+    margin: 5rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-input-container {
+    position: relative;
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    align-items: center;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.096);
+}
+.search-input {
+    padding: 2rem 3rem;
+    border: none;
+    border-radius: 0.5rem;
+    width: 80%;
+}
+.main-container {
+    width: 90%;
+    margin: 2rem auto;
+    margin-top: 0;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+}
+.country-element-container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+}
+.country-flag-image {
+    position: relative;
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+.country-info-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem 2rem 2rem;
+    box-sizing: border-box;
+}
+.country-name {
+    margin-bottom: 1rem;
+}
+.country-small-info-list {
+    list-style: none;
+}
+.country-small-info-list--item {
+    margin: 1rem 0;
+    font-size: 1.4rem;
+}
+.country-small-info-list--item-property {
+    font-weight: 800;
+}

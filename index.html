@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/ligth-variables.css">
+    <link rel="stylesheet" href="./CSS/universal.css">
+    <link rel="stylesheet" href="./CSS/index.css">
+    <title>Contry Info Web</title>
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="header--inside-container">
+                <h2 class="u-heading-2">Where in the World?</h2>
+
+                <button class="dark-ligth-mode-button">
+                    <i class="dark-ligth-mode-icon"></i>
+                    Dark Mode
+                </button>
+            </div>
+        </header>
+
+        <div class="operation-section-container">
+            <div class="search-and-filter-bar">
+                <div class="search-input-container">
+                    <i class="search-icon"></i>
+                    <input type="text" name="countryname" id="country-name-input" class="search-input"
+                        placeholder="Search for a country ...">
+                </div>
+
+                <div class="filter-container">
+                    <div class="filter-by-region-container">
+                        <select name="region" id="region-input">
+                            <option value="africa">Africa</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-container">
+                <div class="country-element-container">
+                    <img src="./design/desktop-design-detail-dark.jpg" alt="Contry Flag" class="country-flag-image">
+
+                    <div class="country-info-container">
+                        <h3 class="u-heading-3 country-name">Country name</h3>
+
+                        <ul class="country-small-info-list">
+                            <li class="country-small-info-list--item">
+                                <span class="country-small-info-list--item-property">Population:</span>
+                                1.000
+                            </li>
+
+                            <li class="country-small-info-list--item">
+                                <span class="country-small-info-list--item-property">Region:</span>
+                                Africa
+                            </li>
+
+                            <li class="country-small-info-list--item">
+                                <span class="country-small-info-list--item-property">Capital:</span>
+                                Berlin
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
