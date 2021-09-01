@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./CSS/ligth-variables.css">
     <link rel="stylesheet" href="./CSS/universal.css">
     <link rel="stylesheet" href="./CSS/index.css">
+    <script src="https://kit.fontawesome.com/5c7edfd842.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Contry Info Web</title>
 </head>
 
@@ -28,49 +30,58 @@
             <div class="search-and-filter-bar">
                 <div class="search-input-container">
                     <i class="search-icon"></i>
-                    <input type="text" name="countryname" id="country-name-input" class="search-input"
+                    <input type="text" v-model="countryToSearch" @keyup="searchCountryByName" name="countryname" id="country-name-input" class="search-input"
                         placeholder="Search for a country ...">
                 </div>
 
                 <div class="filter-container">
                     <div class="filter-by-region-container">
-                        <select name="region" id="region-input">
+                        <select v-model="selectedRegion" @change="searchCountryByRegion" name="region" id="region-input">
+                            <option value="all">All</option>
                             <option value="africa">Africa</option>
+                            <option value="americas">Americas</option>
+                            <option value="asia">Asia</option>
+                            <option value="europe">Europe</option>
+                            <option value="oceania">Oceania</option>
                         </select>
                     </div>
                 </div>
             </div>
 
             <div class="main-container">
-                <div class="country-element-container">
-                    <img src="./design/desktop-design-detail-dark.jpg" alt="Contry Flag" class="country-flag-image">
+                <div v-for="country in countries" class="country-element-container">
+                    <img :src="country.flag" :alt="country.name + 'flag'" class="country-flag-image">
 
                     <div class="country-info-container">
-                        <h3 class="u-heading-3 country-name">Country name</h3>
+                        <h3 class="u-heading-3 country-name">{{ country.name }}</h3>
 
                         <ul class="country-small-info-list">
                             <li class="country-small-info-list--item">
                                 <span class="country-small-info-list--item-property">Population:</span>
-                                1.000
+                                {{ convertNumberToReadbleFormat(country.population)}}
                             </li>
 
                             <li class="country-small-info-list--item">
                                 <span class="country-small-info-list--item-property">Region:</span>
-                                Africa
+                                {{ country.region }}
                             </li>
 
                             <li class="country-small-info-list--item">
                                 <span class="country-small-info-list--item-property">Capital:</span>
-                                Berlin
+                                {{ country.capital }}
                             </li>
                         </ul>
                     </div>
                 </div>
+
             </div>
+
+
         </div>
 
     </div>
 
+    <script src="./JS/index.js"></script>
 </body>
 
 </html>
