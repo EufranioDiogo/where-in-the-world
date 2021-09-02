@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/ligth-variables.css">
+    <link rel="stylesheet" href="../CSS/universal.css">
+    <link rel="stylesheet" href="../CSS/menu.css">
+    <link rel="stylesheet" href="../CSS/more-about.css">
+    <script src="https://kit.fontawesome.com/5c7edfd842.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="header--inside-container">
+                <h2 class="u-heading-2">Where in the World?</h2>
+
+                <div class="button-container">
+                    <img src="../IMAGES/moon-black.svg" alt="Moon Black" class="dark-ligth-mode-icon">
+
+                    <button class="dark-ligth-mode-button">
+                        Dark Mode
+                    </button>
+                </div>
+        </header>
+
+        <div class="go-back-container">
+            <button class="go-back-button">Go Back</button>
+        </div>
+        <div class="country-about-container">
+            <img :src="country.flag" :alt="country.name" class="country-flag">
+
+            <div class="country-info-container">
+                <h2 class="country-name">{{ country.name }}</h2>
+
+                <ul class="country-info-list">
+                    <li class="country-info-list--item"><span class="item-bold">Native Name:</span> {{ country.nativeName }}</li>
+                    <li class="country-info-list--item"><span class="item-bold">Top Level Domain:</span> {{ country.topLevelDomain.toString() }}</li>
+                    <li class="country-info-list--item"><span class="item-bold">Population:</span> {{ convertNumberToReadbleFormat(country.population) }}</li>
+                    <li class="country-info-list--item"><span class="item-bold">Currencies:</span> {{ country.currencies.map((item) => item.code).toString() }}</li>
+                    <li class="country-info-list--item"><span class="item-bold">Region:</span> {{ country.region }}</li>
+                    <li class="country-info-list--item"><span class="item-bold">Languages:</span> {{ country.languages.map((item) => item.name).toString() }}</li>
+                    <li class="country-info-list--item"><span class="item-bold">Sub Region:</span> {{ country.subregion }}</li>
+                    <li></li>
+                    <li class="country-info-list--item"><span class="item-bold">Capital:</span> {{ country.capital }}</li>
+                    
+                </ul>
+
+                <div class="border-countries-container">
+                    <span class="border-countries-bold item-bold">Border Countries: </span>
+                    <ul class="border-countries-list">
+                        <li class="border-country-container">
+                            <img src="" alt="" class="border-country-flag">
+
+                            France
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/moreAbout.js"></script>
+</body>
+
+</html>

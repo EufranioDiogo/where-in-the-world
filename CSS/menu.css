@@ -1,0 +1,46 @@
+html {
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    padding: 3rem 10rem;
+}
+.header--inside-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.operation-section-container {
+    background-color: var(--operation-section);
+}
+.button-container {
+    display: flex;
+    align-items: center;
+}
+.dark-ligth-mode-button {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border: none;
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--background);
+    color: var(--light-mode-text);
+    transition: 0.5s;
+}
+.dark-ligth-mode-button:hover {
+    background-color: hsla(0, 0%, 0%, 0.144);
+}
+
+.u-heading-2 {
+    font-size: 3.2rem;
+    color: var(--light-mode-text);
+}
+.u-heading-3 {
+    font-size: 2.2rem;
+    color: var(--light-mode-text);
+}
