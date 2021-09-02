@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/5c7edfd842.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <title>Document</title>
+    <title>Country Apresentation</title>
 </head>
 
 <body>
@@ -55,10 +55,10 @@
                 <div class="border-countries-container">
                     <span class="border-countries-bold item-bold">Border Countries: </span>
                     <ul class="border-countries-list">
-                        <li class="border-country-container">
+                        <li v-for="border in country.borders" class="border-country-container">
                             <img src="" alt="" class="border-country-flag">
 
-                            France
+                            {{ border }}
                         </li>
                     </ul>
                 </div>
