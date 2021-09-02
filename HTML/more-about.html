@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../CSS/universal.css">
     <link rel="stylesheet" href="../CSS/menu.css">
     <link rel="stylesheet" href="../CSS/more-about.css">
-    <script src="https://kit.fontawesome.com/5c7edfd842.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <title>Country Apresentation</title>
@@ -47,7 +46,7 @@
                     <li class="country-info-list--item"><span class="item-bold">Region:</span> {{ country.region }}</li>
                     <li class="country-info-list--item"><span class="item-bold">Languages:</span> {{ country.languages.map((item) => item.name).toString() }}</li>
                     <li class="country-info-list--item"><span class="item-bold">Sub Region:</span> {{ country.subregion }}</li>
-                    <li></li>
+                    <li class="hidden-column"></li>
                     <li class="country-info-list--item"><span class="item-bold">Capital:</span> {{ country.capital }}</li>
                     
                 </ul>
