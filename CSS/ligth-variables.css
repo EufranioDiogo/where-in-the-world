@@ -1,4 +1,7 @@
 :root {
     --background: hsl(0, 0%, 100%);
     --operation-section: hsl(0, 0%, 98%);
+    --light-mode-elements:hsl(0, 0%, 100%);
+    --light-mode-input: hsl(0, 0%, 52%);
+    --light-mode-text: hsl(200, 15%, 8%);
 }

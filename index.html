@@ -30,7 +30,7 @@
             <div class="search-and-filter-bar">
                 <div class="search-input-container">
                     <i class="search-icon"></i>
-                    <input type="text" v-model="countryToSearch" @keyup="searchCountryByName" name="countryname" id="country-name-input" class="search-input"
+                    <input type="text" v-model.trim="countryToSearch" @keyup="searchCountryByName" name="countryname" id="country-name-input" class="search-input"
                         placeholder="Search for a country ...">
                 </div>
 
@@ -49,30 +49,8 @@
             </div>
 
             <div class="main-container">
-                <div v-for="country in countries" class="country-element-container">
-                    <img :src="country.flag" :alt="country.name + 'flag'" class="country-flag-image">
-
-                    <div class="country-info-container">
-                        <h3 class="u-heading-3 country-name">{{ country.name }}</h3>
-
-                        <ul class="country-small-info-list">
-                            <li class="country-small-info-list--item">
-                                <span class="country-small-info-list--item-property">Population:</span>
-                                {{ convertNumberToReadbleFormat(country.population)}}
-                            </li>
-
-                            <li class="country-small-info-list--item">
-                                <span class="country-small-info-list--item-property">Region:</span>
-                                {{ country.region }}
-                            </li>
-
-                            <li class="country-small-info-list--item">
-                                <span class="country-small-info-list--item-property">Capital:</span>
-                                {{ country.capital }}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <country-container v-for="country in countries" :country="country"></country-container>
+               
 
             </div>
 

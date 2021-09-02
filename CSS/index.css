@@ -25,9 +25,11 @@ html {
 }
 .u-heading-2 {
     font-size: 3.2rem;
+    color: var(--light-mode-text);
 }
 .u-heading-3 {
     font-size: 2.2rem;
+    color: var(--light-mode-text);
 }
 .dark-ligth-mode-button {
     padding: 1rem 2rem;
@@ -36,6 +38,11 @@ html {
     font-size: 2rem;
     border-radius: 0.5rem;
     background-color: var(--background);
+    color: var(--light-mode-text);
+    transition: 0.5s;
+}
+.dark-ligth-mode-button:hover {
+    background-color: hsla(0, 0%, 0%, 0.144);
 }
 .search-and-filter-bar {
     position: relative;
@@ -53,13 +60,17 @@ html {
     border-radius: 0.5rem;
     align-items: center;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.096);
-    background-color: var(--background);
+    background-color: var(--light-mode-elements);
+    color: var(--light-mode-text);
 }
 .search-input {
     padding: 2rem 3rem;
     border: none;
     border-radius: 0.5rem;
     width: 80%;
+    color: var(--light-mode-text);
+    background-color: var(--light-mode-elements);
+
 }
 .main-container {
     width: 90%;
@@ -71,6 +82,8 @@ html {
     grid-template-rows: auto;
     gap: 7.5rem;
     box-sizing: border-box;
+    background-color: var(--operation-section);
+
 }
 .country-element-container {
     width: 100%;
@@ -83,6 +96,8 @@ html {
     border: 0.1rem solid rgba(255, 255, 255, 0);
     cursor: pointer;
     transition: 0.5s;
+    background-color: var(--light-mode-elements);
+
 }
 
 .country-element-container:hover {
@@ -105,6 +120,8 @@ html {
 }
 .country-name {
     margin-bottom: 1rem;
+    color: var(--light-mode-text);
+
 }
 .country-small-info-list {
     list-style: none;
@@ -112,7 +129,11 @@ html {
 .country-small-info-list--item {
     margin: 1rem 0;
     font-size: 1.4rem;
+    color: var(--light-mode-text);
+
 }
 .country-small-info-list--item-property {
     font-weight: 800;
+    color: var(--light-mode-text);
+
 }
