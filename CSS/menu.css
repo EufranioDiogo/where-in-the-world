@@ -7,17 +7,18 @@ html {
     display: flex;
     position: relative;
     box-sizing: border-box;
-    padding: 3rem 10rem;
+    padding: 3rem 0;
+    width: 100%;
+    justify-content: center;
+    background-color: var(--light-mode-elements);
 }
 .header--inside-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 90%;
 }
-.operation-section-container {
-    background-color: var(--operation-section);
-}
+
 .button-container {
     display: flex;
     align-items: center;
@@ -31,6 +32,7 @@ html {
     background-color: var(--background);
     color: var(--light-mode-text);
     transition: 0.5s;
+    margin-left: 1rem;
 }
 .dark-ligth-mode-button:hover {
     background-color: hsla(0, 0%, 0%, 0.144);

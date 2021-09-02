@@ -1,4 +1,7 @@
 
+body {
+    background-color: var(--background);
+}
 #app {
     display: flex;
     flex-direction: column;
@@ -6,6 +9,10 @@
     background-color: var(--background);
 }
 
+.operation-section-container {
+    background-color: var(--operation-section);
+    width: 100%;
+}
 
 .search-and-filter-bar {
     position: relative;
@@ -35,7 +42,7 @@
     background-color: var(--light-mode-elements);
 }
 .search-icon {
-    padding: 0 1rem;
+    padding: 0 2rem;
 }
 .main-container {
     width: 90%;
@@ -100,5 +107,30 @@
 .country-small-info-list--item-property {
     font-weight: 800;
     color: var(--light-mode-text);
+}
 
+@media screen and (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 2rem 0;
+    }
+    .operation-section-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .search-and-filter-bar {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .search-input-container {
+        width: 100%;
+    }
+    .filter-container {
+        margin: 2rem 0;
+    }
+    .u-heading-2 {
+        font-size: 2rem;
+    } 
 }

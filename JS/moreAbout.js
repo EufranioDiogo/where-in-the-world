@@ -40,6 +40,10 @@ app.searchCountryByName(countryName);
 
 let darkModeOn = false;
 
+document.querySelector('.go-back-button').addEventListener('click', () => {
+    window.location.assign('/index.html');
+})
+
 document.querySelector('.dark-ligth-mode-button').onclick = () => {
     document.querySelectorAll('link')[0].href = !darkModeOn ? '../CSS/dark-variables.css' : '../CSS/ligth-variables.css';
     darkModeOn = !darkModeOn;
@@ -49,3 +53,4 @@ document.querySelector('.dark-ligth-mode-button').onclick = () => {
 
     document.querySelector('.search-icon').src = !darkModeOn ? '../IMAGES/search-black.svg' : '../IMAGES/search-white.svg';
 }
+
