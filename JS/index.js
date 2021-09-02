@@ -46,7 +46,7 @@ Response object of country
 const countryComponent = {
     props: ['country'],
     template: `
-    <div class="country-element-container">
+    <div @click="clickOnCountry" class="country-element-container">
         <img :src="country.flag" :alt="country.name + 'flag'" class="country-flag-image">
 
         <div class="country-info-container">
@@ -71,9 +71,17 @@ const countryComponent = {
         </div>
     </div>
    `,
+   data: function() {
+       return {
+           country: this.country
+       }
+   },
    methods: {
         convertNumberToReadbleFormat: function (number) {
             return number.toLocaleString('pt-br', { minimumFractionDigits: 2 })
+        },
+        clickOnCountry: function () {
+            window.location.assign('HTML/more-about.html?countryname=' + this.country.name);
         }
    }
 }
@@ -145,4 +153,9 @@ document.querySelector('.dark-ligth-mode-button').addEventListener('click', () =
     document.querySelectorAll('link')[0].href = !darkModeOn ? './CSS/dark-variables.css' : './CSS/ligth-variables.css';
     darkModeOn = !darkModeOn;
     document.querySelector('.dark-ligth-mode-button').innerText = !darkModeOn ? 'Dark Mode' : 'Light Mode';
+
+    document.querySelector('.dark-ligth-mode-icon').src = !darkModeOn ? './IMAGES/moon-black.svg' : './IMAGES/sun-white.svg';
+
+    document.querySelector('.search-icon').src = !darkModeOn ? './IMAGES/search-black.svg' : './IMAGES/search-white.svg';
+
 })
