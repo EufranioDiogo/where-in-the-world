@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/ligth-variables.css">
     <link rel="stylesheet" href="./CSS/universal.css">
+    <link rel="stylesheet" href="./CSS/menu.css">
     <link rel="stylesheet" href="./CSS/index.css">
     <script src="https://kit.fontawesome.com/5c7edfd842.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -19,24 +20,33 @@
             <div class="header--inside-container">
                 <h2 class="u-heading-2">Where in the World?</h2>
 
-                <button class="dark-ligth-mode-button">
-                    <i class="dark-ligth-mode-icon"></i>
-                    Dark Mode
-                </button>
+                <div class="button-container">
+                    <img src="./IMAGES/moon-black.svg" alt="Moon Black" class="dark-ligth-mode-icon">
+
+                    <button class="dark-ligth-mode-button">
+
+
+                        Dark Mode
+                    </button>
+                </div>
+
             </div>
         </header>
 
         <div class="operation-section-container">
             <div class="search-and-filter-bar">
                 <div class="search-input-container">
-                    <i class="search-icon"></i>
-                    <input type="text" v-model.trim="countryToSearch" @keyup="searchCountryByName" name="countryname" id="country-name-input" class="search-input"
-                        placeholder="Search for a country ...">
+                    <img src="./IMAGES/search-black.svg" alt="Search Icon" class="search-icon">
+
+
+                    <input type="text" v-model.trim="countryToSearch" @keyup="searchCountryByName" name="countryname"
+                        id="country-name-input" class="search-input" placeholder="Search for a country ...">
                 </div>
 
                 <div class="filter-container">
                     <div class="filter-by-region-container">
-                        <select v-model="selectedRegion" @change="searchCountryByRegion" name="region" id="region-input">
+                        <select v-model="selectedRegion" @change="searchCountryByRegion" name="region"
+                            id="region-input">
                             <option value="all">All</option>
                             <option value="africa">Africa</option>
                             <option value="americas">Americas</option>
@@ -50,7 +60,7 @@
 
             <div class="main-container">
                 <country-container v-for="country in countries" :country="country"></country-container>
-               
+
 
             </div>
 
