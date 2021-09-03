@@ -23,13 +23,13 @@
                 <div class="button-container">
                     <img src="../IMAGES/moon-black.svg" alt="Moon Black" class="dark-ligth-mode-icon">
 
-                    <button class="dark-ligth-mode-button">
+                    <button @click="themeChange" class="dark-ligth-mode-button">
                         Dark Mode
                     </button>
                 </div>
         </header>
 
-        <div class="go-back-container">
+        <div id="go-back" @click="goBack" class="go-back-container">
             <button class="go-back-button">Go Back</button>
         </div>
         <div class="country-about-container">
@@ -64,8 +64,7 @@
             </div>
         </div>
     </div>
-
-    <script src="../JS/moreAbout.js"></script>
+    <script type="module" src="../JS/moreAbout.js"></script>
 </body>
 
 </html>

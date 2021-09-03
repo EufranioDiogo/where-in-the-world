@@ -1,4 +1,5 @@
-//https://restcountries.eu
+import { getActiveTheme, switchTheme, wearTheme } from './theme.js';
+
 const BASE_API_URL = 'https://restcountries.eu';
 const API_VERSION_AND_TYPE = '/rest/v2';
 const API_END_POINT_ALL_COUNTRIES = '/all';
@@ -71,19 +72,18 @@ const countryComponent = {
         </div>
     </div>
    `,
-   data: function() {
-       return {
-           country: this.country
-       }
-   },
-   methods: {
+    data: function () {
+        return {
+        }
+    },
+    methods: {
         convertNumberToReadbleFormat: function (number) {
             return number.toLocaleString('pt-br', { minimumFractionDigits: 2 })
         },
         clickOnCountry: function () {
             window.location.assign('HTML/more-about.html?countryname=' + this.country.name);
         }
-   }
+    }
 }
 
 const app = new Vue({
@@ -91,7 +91,8 @@ const app = new Vue({
     data: {
         countries: [],
         selectedRegion: 'all',
-        countryToSearch: ''
+        countryToSearch: '',
+        isDark: getActiveTheme()
     },
     methods: {
         convertNumberToReadbleFormat: function (number) {
@@ -134,6 +135,11 @@ const app = new Vue({
             } else {
                 this.getAllCountries();
             }
+        },
+        themeChange: function () {
+            this.isDark = !this.isDark;
+            switchTheme(this.isDark);
+            wearTheme('../')
         }
     },
     components: {
@@ -142,20 +148,4 @@ const app = new Vue({
 })
 
 app.getAllCountries();
-
-
-
-
-
-let darkModeOn = false;
-
-document.querySelector('.dark-ligth-mode-button').addEventListener('click', () => {
-    document.querySelectorAll('link')[0].href = !darkModeOn ? './CSS/dark-variables.css' : './CSS/ligth-variables.css';
-    darkModeOn = !darkModeOn;
-    document.querySelector('.dark-ligth-mode-button').innerText = !darkModeOn ? 'Dark Mode' : 'Light Mode';
-
-    document.querySelector('.dark-ligth-mode-icon').src = !darkModeOn ? './IMAGES/moon-black.svg' : './IMAGES/sun-white.svg';
-
-    document.querySelector('.search-icon').src = !darkModeOn ? './IMAGES/search-black.svg' : './IMAGES/search-white.svg';
-
-})
+wearTheme('./');

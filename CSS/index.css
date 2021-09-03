@@ -109,6 +109,20 @@ body {
     color: var(--light-mode-text);
 }
 
+@media screen and (max-width: 1475px) {
+    .main-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .main-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .main-container {
         grid-template-columns: 1fr;
